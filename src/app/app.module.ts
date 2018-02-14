@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { logglyLogger } from 'angular-loggly-logger';
 
+// https://github.com/loggly/loggly-jslogger
 import { winston } from 'winston';
 import { Papertrail } from 'winston-papertrail';
 import { Logger } from 'winston';
@@ -36,10 +37,15 @@ export class AppModule { }
 
 const winstonPapertrail: any = new Papertrail({ host: 'logs6.papertrailapp.com', port: 22117 });
 
+const logger: any = new Logger({ transports: [winstonPapertrail] });
+
 winstonPapertrail.on('error', function(err) {
   // Handle, report, or silently ignore connection errors and failures
+  console.log('error encountered');
 });
 
-const logger: any = new Logger({ transports: [winstonPapertrail] });
+winstonPapertrail.on('connect', function() {
+  logger.error('Connected');
+});
 
 logger.error('this is my message');
