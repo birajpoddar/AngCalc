@@ -5,6 +5,21 @@
   <title>AngCalc</title>
   <base href="/">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cloudfront.loggly.com/js/loggly.tracker-latest.min.js" async></script>
+  <script>
+    $(document).ready(function() {
+      var _LTracker = _LTracker || [];
+      _LTracker.push({
+        'logglyKey': '012b53fc-1cf6-427c-b329-5d5f588540e1',
+        'sendConsoleErrors' : true,
+        'tag' : 'javascript-logs'
+      });
+
+      _LTracker.push('first log');
+    });
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -12,5 +27,7 @@
   <app-root></app-root>
 
   <script src="https://gist.github.com/de-labs/647ef1a2fe72d4c4996e5af8c50dca9c.js"></script>
+
+  
 </body>
 </html>
