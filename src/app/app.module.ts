@@ -34,7 +34,7 @@ export class AppModule { }
 
 //logglyLogger.sendMessage({ message: 'first log' });
 
-const winstonPapertrail: any = new transports.Papertrail({ host: 'logs6.papertrailapp.com', port: 22117 });
+const winstonPapertrail: any = new Papertrail({ host: 'logs6.papertrailapp.com', port: 22117 });
 
 winstonPapertrail.on('error', function(err) {
   // Handle, report, or silently ignore connection errors and failures
