@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 // https://github.com/ajbrown/angular-loggly-logger
 import { logglyLogger } from 'angular-loggly-logger';
 
-//https://github.com/kenperkins/winston-papertrail
+// https://github.com/kenperkins/winston-papertrail
 import { winston } from 'winston';
 import { Papertrail } from 'winston-papertrail';
 import { Logger } from 'winston';
@@ -32,9 +32,9 @@ import { AboutComponent } from './about/about.component';
 })
 export class AppModule { }
 
-//logglyLogger.config( '012b53fc-1cf6-427c-b329-5d5f588540e1', true );
+// logglyLogger.config( '012b53fc-1cf6-427c-b329-5d5f588540e1', true );
 
-//logglyLogger.sendMessage({ message: 'first log' });
+// logglyLogger.sendMessage({ message: 'first log' });
 
 const winstonPapertrail: any = new Papertrail({ host: 'logs6.papertrailapp.com', port: 22117 });
 
