@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
+// https://github.com/ajbrown/angular-loggly-logger
 import { logglyLogger } from 'angular-loggly-logger';
 
-// https://github.com/loggly/loggly-jslogger
+//https://github.com/kenperkins/winston-papertrail
 import { winston } from 'winston';
 import { Papertrail } from 'winston-papertrail';
 import { Logger } from 'winston';
