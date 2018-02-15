@@ -27,22 +27,24 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [Papertrail],
+  providers: [Papertrail, logglyLogger],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-// logglyLogger.config( '012b53fc-1cf6-427c-b329-5d5f588540e1', true );
+// let log = new logglyLogger();
 
-// logglyLogger.sendMessage({ message: 'first log' });
+// log.config( '012b53fc-1cf6-427c-b329-5d5f588540e1', true );
 
-const winstonPapertrail: any = new Papertrail({ host: 'logs6.papertrailapp.com', port: 22117 });
+// log.sendMessage({ message: 'first log' });
 
-const logger: any = new Logger({ transports: [winstonPapertrail] });
+const winstonPapertrail = new Papertrail({ host: 'logs6.papertrailapp.com', port: 22117 });
+
+const logger = new Logger({ transports: [winstonPapertrail] });
 
 winstonPapertrail.on('error', function(err) {
   // Handle, report, or silently ignore connection errors and failures
-  console.log('error encountered');
+  console.log(err.message);
 });
 
 winstonPapertrail.on('connect', function() {
